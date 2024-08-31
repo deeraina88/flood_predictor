@@ -1,0 +1,74 @@
+# Package Overview
+package_name: flood_predictor_model
+
+# Data Files
+training_data_file: train.csv
+
+# Variables
+# The variable we are attempting to predict (cnt)
+target: FloodProbability
+
+pipeline_name: flood_predictor_model
+pipeline_save_file: flood_predictor_model_output_v
+
+# Features that will go inside processing pipeline
+features:
+  - MonsoonIntensity
+  - TopographyDrainage
+  - RiverManagement
+  - Deforestation
+  - Urbanization
+  - ClimateChange
+  - DamsQuality
+  - Siltation
+  - AgriculturalPractices
+  - Encroachments
+  - IneffectiveDisasterPreparedness
+  - DrainageSystems
+  - CoastalVulnerability
+  - Landslides
+  - Watersheds
+  - DeterioratingInfrastructure
+  - PopulationScore
+  - WetlandLoss
+  - InadequatePlanning
+  - PoliticalFactors
+
+
+unused_fields:  # Features to drop before pipeline
+  - id
+
+# Features names
+
+
+monsoon_intensity_var: MonsoonIntensity
+topography_drainage_var: TopographyDrainage
+river_management_var: RiverManagement
+deforestation_var: Deforestation
+urbanization_var: Urbanization
+climate_change_var: ClimateChange
+dams_quality_var: DamsQuality
+siltation_var: Siltation
+agricultural_practices_var: AgriculturalPractices
+encroachments_var: Encroachments
+ineffective_disaster_preparedness_var: IneffectiveDisasterPreparedness
+drainage_systems_var: DrainageSystems
+coastal_vulnerability_var: CoastalVulnerability
+landslides_var: Landslides
+watersheds_var: Watersheds
+deteriorating_infrastructure_var: DeterioratingInfrastructure
+population_score_var: PopulationScore
+wetland_loss_var: WetlandLoss
+inadequate_planning_var: InadequatePlanning
+political_factors_var: PoliticalFactors
+  
+# Set train/test split
+test_size: 0.20
+
+# Set the random seed
+random_state: 42
+
+# Alogrithm parameters
+learning_rate: 0.1
+depth: 10
+iterations: 100
