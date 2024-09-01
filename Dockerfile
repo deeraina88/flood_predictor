@@ -1,9 +1,10 @@
 # pull python base image
-FROM python:3.10-slim
+FROM python:3.11-slim
 # copy application files
 ADD /flood_predictor_model_api /flood_predictor_model_api/
 # specify working directory
 WORKDIR /flood_predictor_model_api
+
 # update pip
 RUN pip install --upgrade pip
 # install dependencies
