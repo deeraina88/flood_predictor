@@ -3,7 +3,6 @@ import datetime
 import numpy as np
 from pydantic import BaseModel
 from flood_predictor_model.processing.validation import DataInputSchema
-from pydantic_numpy import NDArray
 
 
 class PredictionResults(BaseModel):
