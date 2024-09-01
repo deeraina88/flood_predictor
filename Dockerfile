@@ -1,13 +1,10 @@
 # pull python base image
-FROM python:3.11-alpine
+FROM python:3.10-slim
 # copy application files
 ADD /flood_predictor_model_api /flood_predictor_model_api/
 # specify working directory
 WORKDIR /flood_predictor_model_api
 # update pip
-RUN apk update && apk add python3-dev \
-                        gcc \
-                        libc-dev
 RUN pip install --upgrade pip
 # install dependencies
 RUN pip install -r requirements.txt
