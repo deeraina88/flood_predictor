@@ -12,13 +12,14 @@ jobs:
     runs-on: self-hosted
 
     steps:
+    
+      - name: Delete Old Docker Container
+        run: sudo docker rm -f flood_predictor-fastapi-container || true
+        
       - name: Pull Docker Image
         env: 
           DOCKER_USER: ${{ secrets.DOCKER_USN }}
         run: sudo docker pull $DOCKER_USER/flood_predictor-fastapi:latest
-    
-      - name: Delete Old Docker Container
-        run: sudo docker rm -f flood_predictor-fastapi-container || true
     
       - name: Run Docker Container
         env: 
