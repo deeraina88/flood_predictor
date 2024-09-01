@@ -1,5 +1,5 @@
 # pull python base image
-FROM python:3.10-slim
+FROM python:3.10-alpine
 # copy application files
 ADD /flood_predictor_model_api /flood_predictor_model_api/
 # specify working directory
