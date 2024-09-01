@@ -17,7 +17,7 @@ from flood_predictor_model.processing.validation import validate_inputs
 
 
 pipeline_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"
-bikeshare_pipe = load_pipeline(file_name = pipeline_file_name)
+flood_pipe = load_pipeline(file_name = pipeline_file_name)
 
 
 def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
@@ -29,7 +29,7 @@ def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
     results = {"predictions": None, "version": _version, "errors": errors}
       
     if not errors:
-        predictions = bikeshare_pipe.predict(validated_data)
+        predictions = flood_pipe.predict(validated_data)
         results = {"predictions": np.round(predictions, decimals=3), "version": _version, "errors": errors}
     print(results)
     return results
